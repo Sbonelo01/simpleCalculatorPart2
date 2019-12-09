@@ -1,34 +1,37 @@
-let calc = require('../src/simpleCalculatorPart2');
+const { Calculator } = require('../src/simpleCalculatorPart2.js');
 
-let calculator = new calc;
+describe('Calculator calculator_instance.add function', function () {
 
-// console.log(calculator.add(1,2));
-// console.log(calculator.add(4,5));
-// console.log(calculator.add(3,8));
-// console.log(calculator.multiply(4,2));
+    let calculator_instance = new Calculator();
+    
+    it('Should return 0', function () {
+        expect(calculator_instance.add(0, 0)).toBe(0);
+    });
 
-// console.log(calculator.last());
+    it('Should return -2', function () {
+        expect(calculator_instance.add(-1, -1)).toBe(-2);
+    });
 
- describe("Simple calculator that add two numbers", function () {
-     it("should be able to add two numbers", function(){
-         expect(calculator.add(-1,-1)).toEqual(-2);
-     });
- });
+    it('Should return 9', function () {
+        expect(calculator_instance.add(4, 5)).toBe(9);
+    });
 
- describe("Simple calculator that add two numbers", function () {
-     it("should be able to add many numbers", function(){
-         expect(calculator.add(1,2,3,4)).toEqual(10);
-     });
- });
+    it('Should return 10', function () {
+        expect(calculator_instance.add(1, 2, 3, 4)).toBe(10);
+    });
 
- describe("Simple calculator that multiply two numbers", function () {
-     it("should be able to multiply two numbers", function () {
-         expect(calculator.multiply(1,2)).toEqual(2);
-     });
- });
+});
 
- describe("Simple calculator to multiply many values", function () {
-     it("Should be able multiply many values", function () {
-         expect(calculator.multiply(1,2,3,4)).toEqual(24);
-     });
- });
+describe('Calculator multiply function', function () {
+
+    let calculator_instance = new Calculator();
+
+    it('Should return 2', function () {
+        expect(calculator_instance.multiply(1, 2)).toBe(2);
+    });
+
+    it('Should return 24', function () {
+        expect(calculator_instance.multiply(1,2,3,4)).toBe(24);
+    });
+
+});

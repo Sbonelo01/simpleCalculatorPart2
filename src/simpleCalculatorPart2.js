@@ -1,12 +1,10 @@
 
-module.exports = class calculator {
+class Calculator {
     constructor() {
         this.arr = [];
         this.last = 0;
     }
     
-    //Add multiple values
-
     add() {
         var sum = 0;
         //Loop through each number while adding it
@@ -23,8 +21,6 @@ module.exports = class calculator {
         //Return final sum
         return sum;
     }
-
-    //Multiply multiple values
 
     multiply() {
         var product = 1;
@@ -66,3 +62,5 @@ module.exports = class calculator {
         return this.arrSlots[slotNumber];
      }
 }
+
+module.exports = { Calculator }
