@@ -1,4 +1,4 @@
-let calc = require('../src/simpleCalculator-2');
+let calc = require('../src/simpleCalculatorPart2');
 
 let calculator = new calc;
 

@@ -2,7 +2,7 @@
 module.exports = class calculator {
     constructor() {
         this.arr = [];
-        this.prev = 0;
+        this.last = 0;
     }
     
     //Add multiple values
@@ -12,12 +12,12 @@ module.exports = class calculator {
         //Loop through each number while adding it
         for(var counter = 0; counter < arguments.length; counter++) { 
             if(arguments[counter] == 'LAST') {
-                arguments[counter] = this.prev;
+                arguments[counter] = this.last;
             }
 
             sum += arguments[counter];
-            arguments[counter] = this.prev;
-            this.prev = sum;
+            arguments[counter] = this.last;
+            this.last = sum;
         }
 
         //Return final sum
@@ -31,41 +31,38 @@ module.exports = class calculator {
 
         for (var counter = 0; counter < arguments.length; counter++) {
             if(arguments[counter] == 'LAST'){
-                arguments[counter] = this.prev;
+                arguments[counter] = this.last;
             }
 
             product *= arguments[counter];
-            arguments[counter] = this.prev;
-            this.prev = product;
+            arguments[counter] = this.last;
+            this.last = product;
         }
         
         return product;
     }
 
-    last(){
-        var lastNumber = sum + arguments[counter] || product + arguments[counter];
+    stringSlot(string){
+        if(string == 'LAST'){
+            return this.last();
+        }
+        if(string.includes('SLOT_') && !isNaN(string[string.length -1])){
+            var slotNumer = string[string.length -1];
+            return this.arrSlots[slotNumber];
+        }
+        return 0;
     }
-}   
 
-    //last adds/multiplies a given argument by the last return value
-
+    //last adds/multiplies a given argument by the last returned value
     last() {
-      return this.prev;
-    }
-
-    	if (!Array.prototype.last){
-         Array.prototype.last = function(){
-             return this[this.length - 1];
-         };
-     };
+      return this.lastValue;
+     }
 
      setSlot(reg) {
-         this.arr.push[reg - 1];
-         var slot = this.arr[reg - 1];
-         return slot;
+         this.arrSlots[slotNUmber] = this.lastValue;
      }
 
-     getSlot(reg) {
-        
+     getSlot(slotNumber) {
+        return this.arrSlots[slotNumber];
      }
-};
+}
