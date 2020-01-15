@@ -1,5 +1,5 @@
 
-class Calculator {
+let Calculator = class {
     constructor() {
         this.arr = [];
         this.last = 0;
