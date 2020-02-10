@@ -30,7 +30,7 @@ describe('FUNCTIONAL TESTS', function() {
                     expect(calculator_instance.add('LAST', 5)).toEqual(8);
                 });
 
-                xit('Should return ', function() {
+                xit('Should return value based on slot position', function() {
                     calculator_instance.add(1, 2);
                     calculator_instance.setSlot(1);
                     expect(calculator_instance.getSlot(1)).toEqual(3);
